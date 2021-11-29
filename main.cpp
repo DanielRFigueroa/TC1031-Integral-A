@@ -26,7 +26,7 @@ int main(){
 
     while (1==1)
     {
-    cout<<"----------- PHONEBOOK ------------"<<endl;
+    cout<<"\n----------- PHONEBOOK ------------"<<endl;
     cout<<"\n1 ..... Agregar Contactos"<<endl;
     cout<<"2 ..... Borrar Contacto"<<endl;
     cout<<"3 ..... Cambiar numero de contacto"<<endl; 
@@ -75,8 +75,15 @@ int main(){
         cout<<contactos.toString()<<endl;
         cout<<"\nInserte el contacto a borrar: ";
         cin>> contact;
-        contactos.deleteAt(contactos.search(contact));
-        cout<<"\nEL contacto ha sido eliminado"<<endl;
+        cout<<" "<<endl;
+        if (contactos.search(contact)==-1)
+        {
+            cout<<"No existe dicho contacto"<<endl;
+        }
+        else {
+            contactos.deleteAt(contactos.search(contact));
+            cout<<"\nEL contacto ha sido eliminado"<<endl;
+        }
         break;
 
     case 3:
@@ -86,6 +93,7 @@ int main(){
         cout<<contactos.toString()<<endl;
         cout<<"\nInserte el contacto a cambiar: ";
         cin>> contact;
+        cout<<" "<<endl;
             strNum = to_string(contact); 
             length = strNum.length(); 
 
@@ -102,7 +110,7 @@ int main(){
         else{
             cout<<"\nInserte el nuevo contacto: ";
             cin>> new_contact;
-
+            cout<<" "<<endl;
                 strNum = to_string(new_contact); 
                 length = strNum.length(); 
                 if (length!=7)
@@ -119,6 +127,7 @@ int main(){
 
         cout<<"\nInserte la lada que desea buscar (ej: 442): ";
         cin>> lada;
+        cout<<" "<<endl;
         ladas.find(lada);
 
         break;

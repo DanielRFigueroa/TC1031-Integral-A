@@ -302,8 +302,14 @@ void Node<T>::add(T val) {
 
 template <class T>
 bool Node<T>::find(T val) {
+
+	if (val != value) {
+        std::cout<<"No tienes contactos con la lada: "<<val<<std::endl;
+		return false;
+	}
+	
 	if (val == value) {
-        std::cout<<"Si tienes contactos con esa lada"<<std::endl;
+        std::cout<<"Si tienes contactos con la lada: "<<val<<std::endl;
 		return true;
 	} else if (val < value) {
 		return (left != NULL && left->find(val));
