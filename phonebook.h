@@ -410,6 +410,19 @@ void Node<T>::removeChilds() {
 	}
 }
 
+/*template <class T>
+void Node<T>::preorder(std::stringstream &aux) const {
+	aux << value;
+	if (left != NULL) {
+		aux << " ";
+		left->preorder(aux);
+	}
+	if (right != NULL) {
+		aux << " ";
+		right->preorder(aux);
+	}
+}*/
+
 template <class T>
 void Node<T>::inorder(std::stringstream &aux) const {
 	if (left != 0) {
@@ -439,7 +452,7 @@ class BST {
         void remove(T);
         void removeAll();
         std::string inorder() const;
-        std::string preorder() const;
+		//std::string preorder() const;
 		
 		char *data;
 
@@ -507,6 +520,18 @@ bool BST<T>::find(T val) const {
 		return false;
 	}
 }
+
+/*template <class T>
+std::string BST<T>::preorder() const {
+	std::stringstream aux;
+
+	aux << "[";
+	if (!empty()) {
+		root->preorder(aux);
+	}
+	aux << "]";
+	return aux.str();
+}*/
 
 template <class T>
 std::string BST<T>::inorder() const {
